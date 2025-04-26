@@ -6,6 +6,7 @@ public class RaceTimer : MonoBehaviour
 {
     private float raceTime = 0;
     private bool raceRunning = false;
+    [SerializeField] private LeaderBoards leaderBoard;
 
     private void Update()
     {
@@ -41,7 +42,10 @@ public class RaceTimer : MonoBehaviour
     private void FinishRace()
     {
         raceRunning = false;
-        Debug.Log("Race finished" + raceTime);
+        GameData.Instance.racesCompleted++;
+        leaderBoard.AddResult(raceTime);
+        Debug.Log("Race ended" + raceTime);
+        Debug.Log("Race complited" + GameData.Instance.racesCompleted);
     }
 
     
