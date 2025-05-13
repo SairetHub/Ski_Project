@@ -7,7 +7,7 @@ using TMPro;
 public class LeaderBoards : MonoBehaviour
 {
     [SerializeField] private List<float> results = new List<float>();
-    [SerializeField] private List<TMP_Text> leaderboardTexts; 
+    [SerializeField] private List<TMP_Text> leaderboardTexts;
 
     void Start()
     {
